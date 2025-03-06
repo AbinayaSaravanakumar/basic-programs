@@ -1,0 +1,107 @@
+//html
+
+<!DOCTYPE html>
+    <title>Travel Accommodation System</title>
+    <link rel="stylesheet" href="styles.css">
+<body>
+  
+    <header>
+        <nav>
+            <ul>
+   <li><a href="#home">Home</a></li>
+<li><a href="#places">Places</a></li>
+   <li><a href="#booking">Booking</a></li>
+   <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1>Welcome to Travel Accommodation</h1>
+        <p>Find the best places to stay during your travels.</p>
+    </section>
+
+    <section id="places">
+        <h2>Popular Places</h2>
+        <div class="place-card">Beach Resort</div>
+        <div class="place-card">Mountain Cabin</div>
+        <div class="place-card">City Hotel</div>
+    </section>
+
+    <section id="booking">
+        <h2>Book Your Stay</h2>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="destination">Destination:</label>
+            <select id="destination">
+                <option>Beach Resort</option>
+                <option>Mountain Cabin</option>
+                <option>City Hotel</option>
+            </select>
+            
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@travel.com</p>
+        <p>Phone: +123456789</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+//css
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10;
+    text-align:center;
+background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU1bD-ausQ64xMGyXPu9mctsURUUhnPI-Yug&s');
+  background-size: cover;
+  background-position: center;
+   background-attachment: fixed;
+}
+nav ul {
+    background:black;
+    padding: 10px;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+}
+section {
+    padding: 20px;
+}
+.place-card {
+    background: black;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    color:white;
+}
+
+
+// javascript
+
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let name = document.getElementById("name").value;
+    let destination = document.getElementById("destination").value;
+    document.getElementById("confirmationMessage").innerText = 
+        `Thank you ${name}, your stay at ${destination} is confirmed!`;
+});
+
+
+
+
+
